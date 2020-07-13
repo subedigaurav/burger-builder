@@ -1,0 +1,21 @@
+{
+	"prettier.useTabs": true,
+	"editor.tabSize": 3,
+	"prettier.tabWidth": 3,
+	"sqltools.connections": [
+		{
+			"askForPassword": false,
+			"database": "users",
+			"driver": "MySQL",
+			"mysqlOptions": {
+				"authProtocol": "default"
+			},
+			"name": "localhost",
+			"password": "gaurav",
+			"port": 3306,
+			"previewLimit": 50,
+			"server": "localhost",
+			"username": "root"
+		}
+	]
+}
