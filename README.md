@@ -2,7 +2,8 @@
 
 [![subedigaurav](https://circleci.com/gh/subedigaurav/burger-builder.svg?style=shield)](https://app.circleci.com/pipelines/github/subedigaurav)
 [![npm version](https://badge.fury.io/js/react.svg)](https://badge.fury.io/js/react)
-![GitHub](https://img.shields.io/github/license/subedigaurav/burger-builder)
+![Depfu](https://img.shields.io/depfu/subedigaurav/burger-builder)
+![GitHub](https://img.shields.io/github/license/subedigaurav/burger-builder?color=%23fa7d09&style=plastic)
 
 ## 💬 ABOUT
 
