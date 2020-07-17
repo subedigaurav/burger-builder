@@ -8,6 +8,7 @@ import Spinner from '../../components/UI/Spinner/Spinner';
 
 import classes from './Auth.module.css';
 import * as actions from '../../store/actions';
+import { updateObject, checkValidity } from '../../shared/utility';
 
 class Auth extends Component {
 	state = {
@@ -44,47 +45,23 @@ class Auth extends Component {
 		isSignUp: true,
 	};
 
-	checkValidity = (value, rules) => {
-		let isValid = true;
-
-		// if no validation rules are defined on the element, treat as valid
-		if (!rules) {
-			return true;
+	componentDidMount() {
+		if (!this.props.buildingBurger && this.props.authRedirectPath !== '/') {
+			this.props.onSetAuthRedirectPath();
 		}
-
-		if (rules.required) {
-			isValid = value.trim() !== '' && isValid;
-		}
-
-		if (rules.minLength) {
-			isValid = value.length >= rules.minLength && isValid;
-		}
-
-		if (rules.maxLength) {
-			isValid = value.length <= rules.maxLength && isValid;
-		}
-
-		if (rules.isEmail) {
-			let regex = /\w+@\w+\.\w{2,4}/;
-			isValid = regex.test(value) && isValid;
-		}
-
-		return isValid;
-	};
+	}
 
 	inputChangedHandler = (event, controlName) => {
-		const updatedControls = {
-			...this.state.controls,
-			[controlName]: {
-				...this.state.controls[controlName],
+		const updatedControls = updateObject(this.state.controls, {
+			[controlName]: updateObject(this.state.controls[controlName], {
 				value: event.target.value,
-				valid: this.checkValidity(
+				valid: checkValidity(
 					event.target.value,
 					this.state.controls[controlName].validation
 				),
 				touched: true,
-			},
-		};
+			}),
+		});
 		this.setState({ controls: updatedControls });
 	};
 
@@ -144,7 +121,7 @@ class Auth extends Component {
 		// redirect the user to the home page if the user is authenticated
 		let authRedirect = null;
 		if (this.props.isAuthenticated) {
-			authRedirect = <Redirect to='/' />;
+			authRedirect = <Redirect to={this.props.authRedirectPath} />;
 		}
 
 		return (
@@ -168,6 +145,8 @@ const mapStateToProps = state => {
 		loading: state.auth.loading,
 		error: state.auth.error,
 		isAuthenticated: state.auth.token !== null,
+		buildingBurger: state.burgerBuilder.building,
+		authRedirectPath: state.auth.authRedirectPath,
 	};
 };
 
@@ -175,6 +154,7 @@ const mapDispatchToProps = dispatch => {
 	return {
 		onAuth: (email, password, isSignUp) =>
 			dispatch(actions.auth(email, password, isSignUp)),
+		onSetAuthRedirectPath: () => dispatch(actions.setAuthRedirectPath('/')),
 	};
 };
 
