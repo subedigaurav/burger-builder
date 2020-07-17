@@ -1,7 +1,5 @@
 {
-	"prettier.useTabs": true,
 	"editor.tabSize": 3,
-	"prettier.tabWidth": 3,
 	"sqltools.connections": [
 		{
 			"askForPassword": false,
@@ -17,5 +15,6 @@
 			"server": "localhost",
 			"username": "root"
 		}
-	]
+	],
+	"prettier.arrowParens": "avoid"
 }
