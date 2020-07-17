@@ -10,7 +10,9 @@ const navigationItems = ({ isAuthenticated }) => (
     </NavigationItem>
 
     {/* display orders route only when the user is authenticated */}
-    {isAuthenticated ? <NavigationItem link="/orders">Orders</NavigationItem> : null}
+    {isAuthenticated ? (
+      <NavigationItem link="/orders">Orders</NavigationItem>
+    ) : null}
 
     {isAuthenticated ? (
       <NavigationItem link="/logout">Logout</NavigationItem>
