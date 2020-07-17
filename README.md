@@ -2,7 +2,7 @@
 
 [![subedigaurav](https://circleci.com/gh/subedigaurav/burger-builder.svg?style=shield)](https://app.circleci.com/pipelines/github/subedigaurav)
 [![npm version](https://badge.fury.io/js/react.svg)](https://badge.fury.io/js/react)
-![Depfu](https://img.shields.io/depfu/subedigaurav/burger-builder)
+[![Depfu](https://badges.depfu.com/badges/90d8038c6d5581a97a127874255b6847/count.svg)](https://depfu.com/github/subedigaurav/burger-builder?project_id=14131)
 ![GitHub](https://img.shields.io/github/license/subedigaurav/burger-builder?color=%23fa7d09&style=plastic)
 
 ## 💬 ABOUT
