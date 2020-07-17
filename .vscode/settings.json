@@ -16,5 +16,6 @@
 			"username": "root"
 		}
 	],
-	"prettier.arrowParens": "avoid"
+	"prettier.arrowParens": "avoid",
+	"prettier.endOfLine": "auto"
 }
