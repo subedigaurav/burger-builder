@@ -8,7 +8,9 @@ import * as actions from './store/actions';
 import asyncComponent from './hoc/asyncComponent/asyncComponent';
 
 // lazy loading of components
-const asyncCheckout = asyncComponent(() => import('./containers/Checkout/Checkout'));
+const asyncCheckout = asyncComponent(() =>
+  import('./containers/Checkout/Checkout')
+);
 const asyncOrders = asyncComponent(() => import('./containers/Orders/Orders'));
 const asyncAuth = asyncComponent(() => import('./containers/Auth/Auth'));
 

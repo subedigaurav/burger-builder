@@ -12,7 +12,7 @@ export const authSuccess = (token, userId) => ({
   userId,
 });
 
-export const authFail = (error) => ({
+export const authFail = error => ({
   type: actionTypes.AUTH_FAIL,
   error,
 });
@@ -28,13 +28,13 @@ export const logout = () => {
 };
 
 // multiply by 1000 here to convert ms to s
-export const checkAuthTimeout = (expirationTime) => (dispatch) => {
+export const checkAuthTimeout = expirationTime => dispatch => {
   setTimeout(() => {
     dispatch(logout());
   }, expirationTime * 1000);
 };
 
-export const auth = (email, password, isSignUp) => (dispatch) => {
+export const auth = (email, password, isSignUp) => dispatch => {
   // ... authenticate the user
   dispatch(authStart());
 
@@ -44,17 +44,21 @@ export const auth = (email, password, isSignUp) => (dispatch) => {
     returnSecureToken: true,
   };
 
-  let url =			'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBNulgwXpavgDYvu8wS1OuGtC6U7dEMsOo';
+  let url =
+    'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' +
+    process.env.REACT_APP_FIREBASE_API_KEY;
   if (!isSignUp) {
-    url =				'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBNulgwXpavgDYvu8wS1OuGtC6U7dEMsOo';
+    url =
+      'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' +
+      process.env.REACT_APP_FIREBASE_API_KEY;
   }
 
   // async authentication using firebase
   axios
     .post(url, authData)
-    .then((response) => {
+    .then(response => {
       const expirationDate = new Date(
-        new Date().getTime() + response.data.expiresIn * 1000,
+        new Date().getTime() + response.data.expiresIn * 1000
       );
       localStorage.setItem('token', response.data.idToken);
       localStorage.setItem('expirationTime', expirationDate);
@@ -62,19 +66,19 @@ export const auth = (email, password, isSignUp) => (dispatch) => {
       dispatch(authSuccess(response.data.idToken, response.data.localId));
       dispatch(checkAuthTimeout(response.data.expiresIn));
     })
-    .catch((err) => {
+    .catch(err => {
       dispatch(authFail(err.response.data.error));
     });
 };
 
-export const setAuthRedirectPath = (path) => ({
+export const setAuthRedirectPath = path => ({
   type: actionTypes.SET_AUTH_REDIRECT_PATH,
   path,
 });
 
 // here dispatch is used coz we want to export multiple actions from within the action
 //! FUNCTION TO LOG THE USER IN IF THE TOKEN IS VALID
-export const authCheckState = () => (dispatch) => {
+export const authCheckState = () => dispatch => {
   const token = localStorage.getItem('token');
   if (!token) {
     dispatch(logout());
@@ -86,8 +90,8 @@ export const authCheckState = () => (dispatch) => {
       dispatch(authSuccess(token, userId));
       dispatch(
         checkAuthTimeout(
-          (expirationTime.getTime() - new Date().getTime()) / 1000,
-        ),
+          (expirationTime.getTime() - new Date().getTime()) / 1000
+        )
       );
     } else {
       dispatch(logout());

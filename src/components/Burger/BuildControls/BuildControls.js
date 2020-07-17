@@ -34,11 +34,9 @@ const buildControls = ({
 }) => (
   <div className={styles.BuildControls}>
     <p>
-      Current Price:
-      {' '}
-      <strong>{price.toFixed(2)}</strong>
+      Current Price: <strong>{price.toFixed(2)}</strong>
     </p>
-    {controls.map((ctrl) => (
+    {controls.map(ctrl => (
       <BuildControl
         key={ctrl.label}
         label={ctrl.label}
@@ -50,8 +48,7 @@ const buildControls = ({
     <button
       className={styles.OrderButton}
       disabled={!purchasable}
-      onClick={ordered}
-    >
+      onClick={ordered}>
       {isAuth ? 'ORDER NOW' : 'SIGN UP TO ORDER'}
     </button>
   </div>
