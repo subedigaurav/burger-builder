@@ -9,6 +9,7 @@
 .vscode/ 
 debug.log
 yarn.lock
+.env
 
 # testing
 /coverage
