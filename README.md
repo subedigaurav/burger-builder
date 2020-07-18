@@ -7,8 +7,12 @@
 
 ## 💬 ABOUT
 
-An application for building and ordering a tasty burger at the convenience of your home
+> An application for building and ordering a tasty burger at the convenience of your home
 
 ## 💻 TECHNOLOGIES USED
 
-ReactJS
+> ReactJS
+
+## 🚀 LIVE LINK
+
+> The app is live! Check it out [here](https://react-burger-builder-95ffe.web.app/).
