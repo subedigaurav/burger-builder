@@ -7,7 +7,7 @@
 
 <p align="center">
   <img src="./assets/burger_asset.png" alt="burger-builder-logo"/><br>
-  <a style="font-size:8px; color:gray" href="https://www.freepik.com/free-photos-vectors/food">Food vector created by macrovector_official - www.freepik.com</a>
+ 
 </p>
 
 ### An application for building and ordering a tasty burger at the convenience of your home.
@@ -22,3 +22,7 @@ Create an account, login and begin making a tasty burger the way you always want
 ## 🚀 LIVE LINK
 
 > The app is live! Check it out [here](https://react-burger-builder-95ffe.web.app/).
+
+## 📢 CREDITS
+
+> <a href="https://www.freepik.com/free-photos-vectors/food">Food vector created by macrovector_official - www.freepik.com</a>
