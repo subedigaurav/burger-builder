@@ -6,7 +6,8 @@
 ![GitHub](https://img.shields.io/github/license/subedigaurav/burger-builder?color=%23fa7d09&style=plastic)
 
 <p align="center">
-  <img src="./assets/burger_asset.png" alt="burger-builder-logo"/>
+  <img src="./assets/burger_asset.png" alt="burger-builder-logo"/><br>
+  <a style="font-size:8px; color:gray" href="https://www.freepik.com/free-photos-vectors/food">Food vector created by macrovector_official - www.freepik.com</a>
 </p>
 
 ### An application for building and ordering a tasty burger at the convenience of your home.
