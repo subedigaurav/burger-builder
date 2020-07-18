@@ -5,13 +5,18 @@
 [![Depfu](https://badges.depfu.com/badges/90d8038c6d5581a97a127874255b6847/count.svg)](https://depfu.com/github/subedigaurav/burger-builder?project_id=14131)
 ![GitHub](https://img.shields.io/github/license/subedigaurav/burger-builder?color=%23fa7d09&style=plastic)
 
-## 💬 ABOUT
+<p align="center">
+  <img src="./assets/burger_asset.png" alt="burger-builder-logo"/>
+</p>
 
-> An application for building and ordering a tasty burger at the convenience of your home
+### An application for building and ordering a tasty burger at the convenience of your home.
+
+Create an account, login and begin making a tasty burger the way you always wanted to (I don't mind if you want salad only ;) ). Checkout, place an order and choose cheapest or fastest delivery method based on your time and 💰. 😃
 
 ## 💻 TECHNOLOGIES USED
 
-> ReactJS
+1. ### React
+2. ### Firebase
 
 ## 🚀 LIVE LINK
 
