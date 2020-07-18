@@ -26,9 +26,8 @@
   <a href="/">
     <img src="https://img.shields.io/github/license/subedigaurav/burger-builder" alt="license">
   </a>
- 
 </div>
-
+<br>
 Create an account, login and begin making a tasty burger the way you always wanted to (I don't mind if you want salad only ;) ). Checkout, place an order and choose cheapest or fastest delivery method based on your time and 💰. 😃
 
 ## 💻 TECHNOLOGIES USED
@@ -39,7 +38,3 @@ Create an account, login and begin making a tasty burger the way you always want
 ## 🚀 LIVE LINK
 
 > The app is live! Check it out [here](https://react-burger-builder-95ffe.web.app/).
-
-## 📢 CREDITS
-
->
