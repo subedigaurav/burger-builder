@@ -24,10 +24,7 @@ const input = ({
         <span role="img" aria-label="warning emoji">
           ❗
         </span>
-        Please enter a valid
-        {' '}
-        {valuetype}
-        .
+        Please enter a valid {valuetype}.
       </p>
     );
   }
@@ -60,7 +57,7 @@ const input = ({
           className={inputClasses.join(' ')}
           onChange={changed}
         >
-          {elementconfig.options.map((option) => (
+          {elementconfig.options.map(option => (
             <option key={option.value} value={option.value}>
               {option.displayValue}
             </option>
@@ -81,7 +78,6 @@ const input = ({
 
   return (
     <div className={classes.Input}>
-      <label className={classes.Label}>{label}</label>
       {inputElement}
       {validationError}
     </div>
