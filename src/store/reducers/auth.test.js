@@ -1,5 +1,5 @@
-import reducer from './auth';
-import * as actionTypes from '../actions/actionTypes';
+import reducer from './auth'
+import * as actionTypes from '../actions/actionTypes'
 
 describe('auth reducer', () => {
   it('should return the initial state', () => {
@@ -9,8 +9,8 @@ describe('auth reducer', () => {
       error: null,
       loading: false,
       authRedirectPath: '/',
-    });
-  });
+    })
+  })
 
   it('should store the token upon login', () => {
     expect(
@@ -34,6 +34,6 @@ describe('auth reducer', () => {
       error: null,
       loading: false,
       authRedirectPath: '/',
-    });
-  });
-});
+    })
+  })
+})

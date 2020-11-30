@@ -1,5 +1,5 @@
-import * as actionTypes from '../actions/actionTypes';
-import { updateObject } from '../../shared/utility';
+import * as actionTypes from "../actions/actionTypes";
+import { updateObject } from "../../shared/utility";
 
 const initialState = {
   ingredients: null,
@@ -28,17 +28,18 @@ const addIngredient = (state, action) => {
   return updateObject(state, updatedState);
 };
 
-const setIngredients = (state, action) => updateObject(state, {
-  ingredients: {
-    salad: action.ingredients.salad,
-    bacon: action.ingredients.bacon,
-    cheese: action.ingredients.cheese,
-    meat: action.ingredients.meat,
-  },
-  error: false,
-  totalPrice: 4,
-  building: false,
-});
+const setIngredients = (state, action) =>
+  updateObject(state, {
+    ingredients: {
+      salad: action.ingredients.salad,
+      bacon: action.ingredients.bacon,
+      cheese: action.ingredients.cheese,
+      meat: action.ingredients.meat,
+    },
+    error: false,
+    totalPrice: 4,
+    building: false,
+  });
 
 const removeIngredient = (state, action) => ({
   ...state,
