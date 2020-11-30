@@ -5,7 +5,11 @@ import BurgerIngredient from './BurgerIngredients/BurgerIngredients';
 
 const burger = ({ ingredients }) => {
   let transformedIngredients = Object.keys(ingredients)
-    .map((igKey) => [...Array(ingredients[igKey])].map((_, i) => <BurgerIngredient key={igKey + i} type={igKey} />))
+    .map(igKey =>
+      [...Array(ingredients[igKey])].map((_, i) => (
+        <BurgerIngredient key={igKey + i} type={igKey} />
+      ))
+    )
     .reduce((arr, el) => arr.concat(el), []);
 
   if (transformedIngredients.length === 0) {
